@@ -1,36 +1,64 @@
-function generateHTML(answers) {
-    const template = ` <!DOCTYPE html>
+function generateHTML(employees) {
+  console.log(employees)
+  const start = `<!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="fontawesome.min.css">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../src/style.css">
       <title>Team Profile Generator</title>
     </head>
     <body>
         <header>
             <h1>My Team</h1>
-        </header>
-        <div class="container">
-        <div class="card">
-            <div class="card-title-bg">
-            <h1 class="card-title">${answers.name}</h1>
-            </div>
-            <div class="card-info">
-              <i class="fas fa-tasks"></i>
-              <p class="id">ID: ${answers.id}</p>
-              <p class="email">Email: <a href="mailto:${answers.email}">${answers.email}</a></p>
-              <p class="office">Office Number: ${answers.office}</p>
-              </div>
-          </div>
-        </div>
-    </body>
-    </html>`;
+        </header>`
+  const middle = employees.map(employee => {
+    const name = employee.getName()
+    const id = employee.getId()
+    const email = employee.getEmail()
+    const role = employee.getRole()
+    let e = ""
 
-    return template;
+    if (role === "Manager") {
+      const office = employee.getOffice()
+      e = (`<p class="attributes">Office Number:${office}</p>`)
+    }
+    if (role === "Engineer") {
+      const github = employee.getGithub()
+      e = (`<p class="attributes">GitHub:${github}</p>`)
+    }
+    if (role === "Intern") {
+      const school = employee.getSchool()
+      e = (`<p class="attributes">School:${school}</p>`)
+    }
+    return addEmployeeInfo(name, role, id, email, e)
+  })
 
+
+  const end = `
+        </body>
+    </html>`
+
+  return start + middle.join('') + end;
+
+}
+
+function addEmployeeInfo(name, role, id, email, e) {
+  return `
+  <div class="card">
+  <div class="card-title-bg">
+  <h1 class="card-title">${name}</h1>
+  <p class="attributes">ID: ${role}</p>
+  </div>
+  <div class="card-info">
+    <i class="fas fa-tasks"></i>
+    <p class="attributes">ID: ${id}</p>
+    <p class="attributes">Email: <a href="mailto:${email}">${email}</a></p>
+    ${e}
+    </div>
+</div>`
 }
 
 module.exports = generateHTML;
