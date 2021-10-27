@@ -11,7 +11,7 @@ const util = require('util');
 // const Intern = require('./lib/Intern'); 
 
 
-const writeFileAsync = util.promisify(fs.writeFile);
+const writeFilesync = util.promisify(fs.writeFile);
 
 const promptQuestions = () => {
     return inquirer.prompt([
@@ -148,7 +148,6 @@ const promptQuestions = () => {
     .then((answers) => {
 
     const htmlFile = generateHTML(answers);
-    console.log(readme)
     const fileName = "index.html"
     const outputPath = path.join(__dirname, 'output')
 
@@ -158,7 +157,7 @@ const promptQuestions = () => {
 
     const filePath = path.join(outputPath, fileName)
 
-    fs.writeFileSync(filePath, htmlFile, (err) =>
+    fs.writeFilesync(filePath, htmlFile, (err) =>
     err ? console.log(err) : console.log(`Successfully created ${fileName}!`)  
         )
     });
