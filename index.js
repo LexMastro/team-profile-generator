@@ -147,7 +147,7 @@ const promptQuestions = () => {
     promptQuestions()
     .then((answers) => {
 
-    const htmlFile = generateMarkdown(answers);
+    const htmlFile = generateHTML(answers);
     console.log(readme)
     const fileName = "index.html"
     const outputPath = path.join(__dirname, 'output')
