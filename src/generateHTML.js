@@ -13,7 +13,8 @@ function generateHTML(employees) {
     <body>
         <header>
             <h1>My Team</h1>
-        </header>`
+        </header> 
+        <div class="conatiner">`
   const middle = employees.map(employee => {
     const name = employee.getName()
     const id = employee.getId()
@@ -27,7 +28,7 @@ function generateHTML(employees) {
     }
     if (role === "Engineer") {
       const github = employee.getGithub()
-      e = (`<p class="attributes">GitHub:${github}</p>`)
+      e = (`<p class="attributes">GitHub:<a href="${github}"</a></p>`)
     }
     if (role === "Intern") {
       const school = employee.getSchool()
@@ -36,8 +37,12 @@ function generateHTML(employees) {
     return addEmployeeInfo(name, role, id, email, e)
   })
 
-
   const end = `
+        </div>
+        <script ../__tests__/Employee.test.js></script>
+        <script ../__tests__/Engineer.test.js></script>
+        <script ../__tests__/Intern.test.js></script>
+        <script ../__tests__/Manager.test.js></script>
         </body>
     </html>`
 
@@ -50,10 +55,9 @@ function addEmployeeInfo(name, role, id, email, e) {
   <div class="card">
   <div class="card-title-bg">
   <h1 class="card-title">${name}</h1>
-  <p class="attributes">ID: ${role}</p>
   </div>
   <div class="card-info">
-    <i class="fas fa-tasks"></i>
+    <p class="attributes"><i class="fas fa-tasks"></i>${role}</p>
     <p class="attributes">ID: ${id}</p>
     <p class="attributes">Email: <a href="mailto:${email}">${email}</a></p>
     ${e}

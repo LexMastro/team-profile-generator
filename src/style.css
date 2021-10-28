@@ -9,6 +9,13 @@ header {
     background-color: cornflowerblue;
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .card {
     background-color: cornflowerblue;
     box-shadow: 5px 7px 5px #929191;
