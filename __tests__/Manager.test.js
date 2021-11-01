@@ -1,9 +1,9 @@
 const Manager = require("../lib/Manager");
 
 describe("Manager", () => {
-    const manager = new manager('James', '006', 'manager@email.com');
+    const manager = new Manager('James', '006', 'manager@email.com', '1');
     it("getName = name", () => {
-        expect(manager.getName()).toEqual('John');
+        expect(manager.getName()).toEqual('James');
     })
     it("getID = id", () => {
         expect(manager.getId()).toEqual('006');

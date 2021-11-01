@@ -14,7 +14,7 @@ function generateHTML(employees) {
         <header>
             <h1>My Team</h1>
         </header> 
-        <div class="conatiner">`
+        <div class="container">`
   const middle = employees.map(employee => {
     const name = employee.getName()
     const id = employee.getId()
@@ -28,7 +28,7 @@ function generateHTML(employees) {
     }
     if (role === "Engineer") {
       const github = employee.getGithub()
-      e = (`<p class="attributes">GitHub:<a href="${github}"</a></p>`)
+      e = (`<p class="attributes">GitHub:<a href="${github}">${github}</a></p>`)
     }
     if (role === "Intern") {
       const school = employee.getSchool()
@@ -39,10 +39,10 @@ function generateHTML(employees) {
 
   const end = `
         </div>
-        <script ../__tests__/Employee.test.js></script>
-        <script ../__tests__/Engineer.test.js></script>
-        <script ../__tests__/Intern.test.js></script>
-        <script ../__tests__/Manager.test.js></script>
+        <script src="../__tests__/Employee.test.js"></script>
+        <script src="../__tests__/Manager.test.js"></script>
+        <script src="../__tests__/Engineer.test.js"></script>
+        <script src="../__tests__/Intern.test.js"></script>
         </body>
     </html>`
 

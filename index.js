@@ -104,7 +104,7 @@ function continuePrompt() {
 function makeHTML() {
     const htmlFile = generateHTML(employees);
     const fileName = "index.html"
-    const outputPath = path.join(__dirname, 'output')
+    const outputPath = path.join(__dirname, 'dist')
 
     if (!fs.existsSync(outputPath)) {
         fs.mkdirSync(outputPath, 0744);
