@@ -5,7 +5,7 @@
 ## Table of Contents
 - [UserStory](#userstory)
 - [Description](#description)
-- [Demo](#demonstration)
+- [Demonstration](#demonstration)
 - [Installation](#installation)
 - [Tests](#tests)
 - [Usage](#usage)
@@ -22,7 +22,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 ## Description
 A team profile generator that lists each employees details & credentials with option to choose as many employees as necessary.
 
-## Demo
+## Demonstration
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
