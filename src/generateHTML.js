@@ -24,15 +24,15 @@ function generateHTML(employees) {
 
     if (role === "Manager") {
       const office = employee.getOffice()
-      e = (`<p class="attributes">Office Number:${office}</p>`)
+      e = (`<p class="attributes">Office Number: ${office}</p>`)
     }
     if (role === "Engineer") {
       const github = employee.getGithub()
-      e = (`<p class="attributes">GitHub:<a href="${github}">${github}</a></p>`)
+      e = (`<p class="attributes">GitHub:<a href="${github}"> ${github}</a></p>`)
     }
     if (role === "Intern") {
       const school = employee.getSchool()
-      e = (`<p class="attributes">School:${school}</p>`)
+      e = (`<p class="attributes">School: ${school}</p>`)
     }
     return addEmployeeInfo(name, role, id, email, e)
   })
@@ -57,9 +57,9 @@ function addEmployeeInfo(name, role, id, email, e) {
   <h1 class="card-title">${name}</h1>
   </div>
   <div class="card-info">
-    <p class="attributes"><i class="fas fa-tasks"></i>${role}</p>
+    <p class="attributes">${role}</p>
     <p class="attributes">ID: ${id}</p>
-    <p class="attributes">Email: <a href="mailto:${email}">${email}</a></p>
+    <p class="attributes">Email: <a href="mailto:${email}"> ${email}</a></p>
     ${e}
     </div>
 </div>`

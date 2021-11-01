@@ -19,7 +19,9 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    grid-row-gap: 45px;
 }
 
 .card {
@@ -47,6 +49,7 @@ header {
     padding: 10px;
 }
 
-.container {
-    margin-top: 40px;
+a {
+    color: white;
 }
+
