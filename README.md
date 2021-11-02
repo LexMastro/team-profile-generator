@@ -2,6 +2,8 @@
 
 ![https://opensource.org/licenses/MIT](https://img.shields.io/badge/License-MIT-blue)
 
+## Live Video Demo [_here_](https://vimeo.com/641707460)
+
 ## Table of Contents
 - [UserStory](#userstory)
 - [Description](#description)
@@ -26,7 +28,7 @@ A team profile generator that lists each employees details & credentials with op
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
-![HTML webpage titled “My Team” features three boxes listing employee names, titles, and other key info.](./Assets/live-demo.gif)
+![HTML webpage titled “My Team” features three boxes listing employee names, titles, and other key info.](./Assets/index-html.png)
 
 ## Installation
 
